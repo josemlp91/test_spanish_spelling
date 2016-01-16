@@ -5,6 +5,7 @@ before_install:
   - sudo apt-get install aspell-en
   - wget https://github.com/josemlp91/test_spanish_spelling/blob/master/.aspell.en.pws
   - wget https://github.com/josemlp91/test_spanish_spelling/blob/master/.aspell.es.pws
-
+  - cp .aspell.en.pws ~/
+  - cp .aspell.es.pws ~/
 
 script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do OUTPUT=`cat $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT" ]; then echo $OUTPUT; echo $f; exit 1; fi; done
