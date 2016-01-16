@@ -2,5 +2,8 @@
 before_install:
   - sudo apt-get update
   - sudo apt-get install aspell-es
-script: OUTPUT=`cat texto/relato.md | aspell list -d es -p ./.aspell.es.pws`; if [ -n "$OUTPUT" ]; then echo $OUTPUT; exit 1; fi
+  - cp .aspell.en.pws ~/
+
+script: cat ejemplo.txt | aspell list -d en --encoding utf-8 | exit $(wc -l)
+
 
