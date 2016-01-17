@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if  [ -z "$1" ] && [ -z "$2" ]; then
-  echo "Especifique ruta del archivo a revisar ortografia y idioma (spanish | english)";
+  echo "Enter file path to check spelling and language (spanish | english)";
   else
     if [[ $2  = "english" ]];
       then
@@ -16,6 +16,6 @@ if  [ -z "$1" ] && [ -z "$2" ]; then
 
   git init
   git add .
-  git commit -m "Actualizamos diccionario personal."
+  git commit -m "Update your personal dictionary."
   git push origin master
 fi
