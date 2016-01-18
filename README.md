@@ -2,5 +2,6 @@
 
 # Corrector Ortográfico
 Integración continua para documentación, realizando pruebas de la ortografía sobre archivos markdown y latex.
+Berde
 
  > aspell --master=spanish  -c ./directorio/otro.txt 
